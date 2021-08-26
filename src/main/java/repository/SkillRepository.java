@@ -20,7 +20,8 @@ public class SkillRepository {
     private static final String FILE_PATH ="C:\\Users\\dobpu\\IdeaProjects\\CRUDAplications\\src\\main\\resources\\skills.json";
 
     public static void main(String[] args) {
-      getAll();
+
+        getAll();
     }
     Skill getById(Long id){
         return null;
@@ -30,14 +31,17 @@ public class SkillRepository {
       try (BufferedReader bf = new BufferedReader(new FileReader(FILE_PATH));){
             json = bf.readLine();
 
+
       }catch (IOException e){
         e.printStackTrace();
       }
      Type targetClassType = new TypeToken<ArrayList<Skill>>(){}.getType();
-      ArrayList<Skill> skills = gson.fromJson(json, (Type) Skill.class);
-
-      // System.out.println(skillObject.getId()+" "+ skillObject.getName());
+    ArrayList<Skill> skills = gson.fromJson(json,targetClassType);
+     System.out.println(skills);
        return skills;
+
+
+
     }
     Skill save(Skill skill){
         return null;
