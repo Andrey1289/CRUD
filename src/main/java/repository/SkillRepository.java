@@ -70,7 +70,7 @@ return ById;
            e.printStackTrace();
        }
 
-        return null;
+        return skill;
     }
     Skill update(Skill skill){
         String json =null;
@@ -101,7 +101,7 @@ return ById;
        }catch (IOException e){
            e.printStackTrace();
        }
-        return null;
+        return skill;
     }
     void deleteById(Long id){
         String json =null;
