@@ -33,8 +33,7 @@ public class SkillRepository {
              ById= skill;
             }
         }
-return ById;
-
+        return ById;
    }
   List<Skill> getAll() {
         String json =null;
@@ -69,7 +68,6 @@ return ById;
        }catch (IOException e){
            e.printStackTrace();
        }
-
         return skill;
     }
     Skill update(Skill skill){
@@ -90,7 +88,6 @@ return ById;
             if (skill.getName().equals(element.getName()))
                 litr.set(skill);
         }
-
        String jsonCollection = gson.toJson(skills);
        char[] buff = new char[jsonCollection.length()];
        jsonCollection.getChars(0,jsonCollection.length(),buff,0);
