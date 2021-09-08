@@ -23,7 +23,7 @@ public class TeamRepository {
 private final Gson gson = new Gson();
 private final String FILE_PATH ="C:\\Users\\dobpu\\IdeaProjects\\CRUDAplications\\src\\main\\resources\\teams.json";
 
-    Team getById(Long id){
+   public Team getById(Long id){
         Team teamById = null;
         String json = null;
         try(BufferedReader br = new BufferedReader(new FileReader(FILE_PATH));) {
@@ -45,7 +45,7 @@ private final String FILE_PATH ="C:\\Users\\dobpu\\IdeaProjects\\CRUDAplications
       return teamById;
     }
 
-   List<Team> getAll(){
+  public List<Team> getAll(){
        String json= null;
         try(BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
             json = br.readLine();
@@ -58,7 +58,7 @@ private final String FILE_PATH ="C:\\Users\\dobpu\\IdeaProjects\\CRUDAplications
         return teams;
     }
 
-   Team save(Team team){
+  public Team save(Team team){
         String json= "" ;
         try (BufferedReader bf = new BufferedReader(new FileReader(FILE_PATH));){
             json = bf.readLine();
@@ -94,7 +94,7 @@ private final String FILE_PATH ="C:\\Users\\dobpu\\IdeaProjects\\CRUDAplications
         return team;
     }
 
-    Team update(Team team){
+   public Team update(Team team){
        String json =null;
        try (BufferedReader bf = new BufferedReader(new FileReader(FILE_PATH));){
            json = bf.readLine();
@@ -128,7 +128,7 @@ private final String FILE_PATH ="C:\\Users\\dobpu\\IdeaProjects\\CRUDAplications
        return team;
            }
 
-    void deleteById(Long id){
+   public void deleteById(Long id){
        String json =null;
        try (BufferedReader bf = new BufferedReader(new FileReader(FILE_PATH));){
            json = bf.readLine();

@@ -20,7 +20,7 @@ public class DeveloperRepository {
     private  final Gson gson = new Gson();
     private  final String FILE_PATH = ("C:\\Users\\dobpu\\IdeaProjects\\CRUDAplications\\src\\main\\resources\\developers.json");
 
-     Developer getById(Long id){
+    public Developer getById(Long id){
         Developer devById = null;
         String json = null;
         try(BufferedReader br = new BufferedReader(new FileReader(FILE_PATH));) {
@@ -53,7 +53,7 @@ public class DeveloperRepository {
         ArrayList<Developer> developers = gson.fromJson(json,targetClassType);
         return developers;
     }
-  Developer save(Developer developer){
+ public Developer save(Developer developer){
         String json= "" ;
         try (BufferedReader bf = new BufferedReader(new FileReader(FILE_PATH));){
             json = bf.readLine();
@@ -87,7 +87,7 @@ public class DeveloperRepository {
         }}
      return developer;
     }
-    Developer update(Developer developer ){
+   public Developer update(Developer developer ){
         String json =null;
         try (BufferedReader bf = new BufferedReader(new FileReader(FILE_PATH));){
             json = bf.readLine();
@@ -121,7 +121,7 @@ public class DeveloperRepository {
         }
         return developer;
     }
-    void deleteById(Long id){
+   public void deleteById(Long id){
         String json =null;
         try (BufferedReader bf = new BufferedReader(new FileReader(FILE_PATH));){
             json = bf.readLine();

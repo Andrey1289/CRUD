@@ -15,7 +15,7 @@ public class SkillRepository {
     private  final Gson gson = new Gson();
     private  final String FILE_PATH ="C:\\Users\\dobpu\\IdeaProjects\\CRUDAplications\\src\\main\\resources\\skills.json";
 
-       Skill getById(Long id){
+      public Skill getById(Long id){
         Skill ById = null;
         String json =null;
         try (BufferedReader bf = new BufferedReader(new FileReader(FILE_PATH));){
@@ -35,7 +35,7 @@ public class SkillRepository {
         }
         return ById;
    }
-  List<Skill> getAll() {
+ public List<Skill> getAll() {
         String json =null;
       try (BufferedReader bf = new BufferedReader(new FileReader(FILE_PATH));){
             json = bf.readLine();
@@ -47,7 +47,7 @@ public class SkillRepository {
     ArrayList<Skill> skills = gson.fromJson(json,targetClassType);
        return skills;
     }
-    Skill save(Skill skill){
+   public Skill save(Skill skill){
         String json =null;
         try (BufferedReader bf = new BufferedReader(new FileReader(FILE_PATH));){
             json = bf.readLine();
@@ -70,7 +70,7 @@ public class SkillRepository {
        }
         return skill;
     }
-    Skill update(Skill skill){
+   public Skill update(Skill skill){
         String json =null;
         try (BufferedReader bf = new BufferedReader(new FileReader(FILE_PATH));){
             json = bf.readLine();
@@ -100,7 +100,7 @@ public class SkillRepository {
        }
         return skill;
     }
-    void deleteById(Long id){
+   public void deleteById(Long id){
         String json =null;
         try (BufferedReader bf = new BufferedReader(new FileReader(FILE_PATH));){
             json = bf.readLine();

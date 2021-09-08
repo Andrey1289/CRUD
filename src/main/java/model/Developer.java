@@ -9,6 +9,10 @@ public class Developer {
   private String lastName;
   private List<Skill> skills;
 
+  public Developer(){
+
+  }
+
   public Developer(Long id, String firstName, String lastName, List<Skill> skills) {
     this.id = id;
     this.firstName = firstName;
@@ -57,4 +61,6 @@ public class Developer {
             ", skills=" + skills +
             '}';
   }
+
+
 }
