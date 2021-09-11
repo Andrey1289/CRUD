@@ -5,6 +5,7 @@ import model.Developer;
 import model.Skill;
 import repository.DeveloperRepository;
 import repository.SkillRepository;
+import view.SkillView;
 
 import java.util.List;
 

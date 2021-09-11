@@ -38,6 +38,7 @@ private final String FILE_PATH ="C:\\Users\\dobpu\\IdeaProjects\\CRUDAplications
         for (Team team : teams) {
             if(team.getId().equals(id)) {
                 teamById = team;
+                System.out.println(teamById);
             }
         }
         if(teamById == null)

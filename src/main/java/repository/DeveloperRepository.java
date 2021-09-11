@@ -35,6 +35,7 @@ public class DeveloperRepository {
         for (Developer developer : developers) {
             if(developer.getId().equals(id)){
                 devById = developer;
+                System.out.println(devById);
             }
            }
         if(devById == null)

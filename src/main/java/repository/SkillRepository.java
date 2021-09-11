@@ -16,7 +16,7 @@ public class SkillRepository {
     private  final String FILE_PATH ="C:\\Users\\dobpu\\IdeaProjects\\CRUDAplications\\src\\main\\resources\\skills.json";
 
       public Skill getById(Long id){
-        Skill ById = null;
+        Skill s = null;
         String json =null;
         try (BufferedReader bf = new BufferedReader(new FileReader(FILE_PATH));){
             json = bf.readLine();
@@ -29,11 +29,15 @@ public class SkillRepository {
         Type targetClassType = new TypeToken<ArrayList<Skill>>(){}.getType();
         ArrayList<Skill> skills = gson.fromJson(json,targetClassType);
         for (Skill skill : skills) {
-            if (skill.getId().equals(id)){
-             ById= skill;
-            }
+            if(skill.getId() == null){
+                System.out.println("Нет такого 'ID'");
+            break;}
+            if(skill.getId().equals(id)){
+             s= skill;
+                System.out.println(s);
+            return s;}
         }
-        return ById;
+       return s;
    }
  public List<Skill> getAll() {
         String json =null;
@@ -58,7 +62,7 @@ public class SkillRepository {
         Type targetClassType = new TypeToken<ArrayList<Skill>>(){}.getType();
         ArrayList<Skill> skills = gson.fromJson(json,targetClassType);
           skills.add(skill);
-        String jsonCollection = gson.toJson(skills);
+              String jsonCollection = gson.toJson(skills);
         char[] buff = new char[jsonCollection.length()];
        jsonCollection.getChars(0,jsonCollection.length(),buff,0);
        try( FileWriter fw = new FileWriter(FILE_PATH);) {
@@ -85,8 +89,12 @@ public class SkillRepository {
             Skill element = litr.next();
             if(skill.getId().equals(element.getId()))
                 litr.set(skill);
+            if(skill.getId().equals(element.getId())== false){
+            System.out.println("нет такого 'ID'");
+            break;}
             if (skill.getName().equals(element.getName()))
                 litr.set(skill);
+
         }
        String jsonCollection = gson.toJson(skills);
        char[] buff = new char[jsonCollection.length()];

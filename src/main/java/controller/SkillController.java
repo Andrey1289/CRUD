@@ -9,9 +9,8 @@ public class SkillController {
     public Skill get(Long id){
      return repo.getById(id);
     }
-     public Skill create(Long id,String name){
+     public Skill create(String name){
         Skill s = new Skill();
-        s.setId(id);
         s.setName(name);
         return repo.save(s);
      }
