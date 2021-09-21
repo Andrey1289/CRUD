@@ -1,6 +1,7 @@
 package view;
 
 import controller.SkillController;
+import repository.JsonSkillRepositoryImpl;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,6 +11,7 @@ public class SkillView {
     public static void main(String[] args) {
         SkillView skv = new SkillView();
         skv.Skillview();
+
     }
 
   private final SkillController sCont =new SkillController();

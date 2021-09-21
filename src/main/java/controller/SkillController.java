@@ -1,10 +1,10 @@
 package controller;
 
 import model.Skill;
-import repository.SkillRepository;
+import repository.JsonSkillRepositoryImpl;
 
 public class SkillController {
-    private final SkillRepository repo = new SkillRepository();
+    private final JsonSkillRepositoryImpl repo = new JsonSkillRepositoryImpl();
 
     public Skill get(Long id){
      return repo.getById(id);
