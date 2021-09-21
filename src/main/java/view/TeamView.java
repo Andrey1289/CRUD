@@ -25,7 +25,7 @@ public class TeamView {
         ArrayList<Skill> skills = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in));) {
             System.out.println("Меню для создания Team");
-            System.out.println("Для завершения нажмите 'EXIT'");
+            System.out.println("Для завершения нажмите 'Exit'");
             String strUser ="";
 
             while(!strUser.equals("EXIT")) {
@@ -33,13 +33,12 @@ public class TeamView {
                 strUser= br.readLine().trim();
                 switch (strUser) {
                     case "create":
-                        System.out.println("Введите 'ID' Team");
-                        Long id = Long.parseLong(br.readLine().trim());
+                        Long id;
                         System.out.println("Введите Team 'Name'");
                         String teamName = br.readLine().trim();
                         while(true){
-                        System.out.println("Добавте 'Developers' в 'Team' для выхода напишите 'EXIT' для продолжения 'Enter'");
-                        if(br.readLine().equals("EXIT"))
+                        System.out.println("Добавте 'Developers' в 'Team' для выхода напишите 'Exit' для продолжения 'Enter'");
+                        if(br.readLine().equals("Exit"))
                             break;
                         System.out.println("Введите developer 'firstName'");
                         String firstName = br.readLine().trim();
@@ -48,7 +47,7 @@ public class TeamView {
                         developer.setFirstName(firstName);
                         developer.setLastName(lastName);
                         developers.add(developer);}
-                       tcont.create(id,teamName,developers );
+                       tcont.create(teamName,developers );
                         System.out.println("Team успешно создана");
                         break;
                     case "get":
@@ -75,8 +74,8 @@ public class TeamView {
                        System.out.println("Введите Team 'Name'");
                         teamName = br.readLine().trim();
                        while(true){
-                           System.out.println("Измените 'Developers' в 'Team' для выхода напишите 'EXIT' для продолжения 'Enter'");
-                           if(br.readLine().equals("EXIT"))
+                           System.out.println("Измените 'Developers' в 'Team' для выхода напишите 'Exit' для продолжения 'Enter'");
+                           if(br.readLine().equals("Exit"))
                                break;
                            System.out.println("Введите developer 'firstName'");
                            String firstName = br.readLine().trim();

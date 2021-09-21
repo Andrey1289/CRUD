@@ -1,1 +1,1 @@
-[{"id":2,"firstName":"SvetaUpdate","lastName":"IvanovaUpdate","skills":[{"name":"Uppppp"}]},{"id":1,"firstName":"Andrey","lastName":"Ivanov","skills":[{"name":"CanSay"}]}]
+[{"id":1,"firstName":"Andrey","lastName":"Ivanov","skills":[{"name":"read"}]},{"id":2,"firstName":"Sveta","lastName":"Ivanova","skills":[{"name":"Write"}]},{"id":3,"firstName":"Kata","lastName":"Petrova","skills":[{"name":"Jumping"}]}]

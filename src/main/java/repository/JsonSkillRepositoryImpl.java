@@ -56,7 +56,6 @@ public class JsonSkillRepositoryImpl implements SkillRepository {
 
     }
     private void writeToFile(List<Skill> skills) {
-        String json =null;
         String jsonCollection = gson.toJson(skills);
         char[] buff = new char[jsonCollection.length()];
         jsonCollection.getChars(0,jsonCollection.length(),buff,0);

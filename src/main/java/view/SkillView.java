@@ -18,9 +18,9 @@ public class SkillView {
     public  void Skillview() {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in));) {
             System.out.println("Меню создания 'Skill' ");
-            System.out.println("Для завершения нажмите 'EXIT'");
+            System.out.println("Для завершения нажмите 'Exit'");
             String strUser ="";
-            while(!strUser.equals("EXIT")) {
+            while(!strUser.equals("Exit")) {
                 System.out.println("Введите действие: 'create' 'get' 'update' 'delete' ");
                strUser= br.readLine().trim();
                 switch (strUser) {
